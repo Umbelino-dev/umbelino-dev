@@ -65,11 +65,11 @@ export function Hero() {
           <div className="art-index">IU / 01 — IDENTIDADE</div>
           <div className="art-caption"><span>TECNOLOGIA</span><span>EM CONSTRUÇÃO</span></div>
           <img
-            src="/iury-hero-clean.png"
+            src="/iury-hero-v2.png"
             alt="Iury Umbelino ao lado de uma versão ilustrada em estilo anime"
             className="hero-character"
-            width={1072}
-            height={929}
+            width={742}
+            height={721}
             fetchPriority="high"
           />
         </Reveal>

@@ -73,10 +73,10 @@ button, input, textarea { font: inherit; }
 .hero-facts div { display: grid; gap: 5px; }
 .hero-facts strong { color: var(--purple); font: 700 20px/1 var(--font-display); letter-spacing: -.05em; }
 .hero-facts span { color: #77747e; font-size: 10px; }
-.hero-art { position: relative; align-self: stretch; min-height: 670px; overflow: hidden; isolation: isolate; }
+.hero-art { position: relative; align-self: stretch; min-height: 670px; overflow: hidden; isolation: isolate; display: flex; align-items: flex-end; justify-content: center; padding: 28px 0 28px 20px; box-sizing: border-box; }
 .hero-art::before { content: ""; position: absolute; inset: 28px 0 28px 20px; z-index: -2; border-radius: 24px; background-color: #f4f1ff; background-image: linear-gradient(rgba(85,65,199,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(85,65,199,.08) 1px, transparent 1px); background-size: 42px 42px; }
 .hero-art::after { content: ""; position: absolute; inset: 28px 0 28px 20px; z-index: -1; border: 1px solid rgba(85,65,199,.11); border-radius: 24px; background: radial-gradient(circle at 50% 48%, rgba(255,255,255,.78), transparent 55%); }
-.hero-character { position: absolute; z-index: 2; inset: 28px 0 28px 20px; object-fit: contain; object-position: center bottom; }
+.hero-character { position: relative; z-index: 2; max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; display: block; }
 .art-index, .art-caption { position: absolute; z-index: 5; color: #77718d; font: 700 9px/1.2 var(--font-display); letter-spacing: .13em; }
 .art-index { top: 46px; right: 28px; }
 .art-caption { left: 38px; bottom: 50px; display: grid; gap: 5px; }
