@@ -125,6 +125,7 @@ button, input, textarea { font: inherit; }
 .project-card:hover { transform: translateY(-7px); box-shadow: 0 25px 60px rgba(51,38,111,.12); border-color: rgba(85,65,199,.24); }
 .project-card:hover::before { transform: scale(1.35); }
 .project-top, .project-body { position: relative; z-index: 2; }
+.project-logo { width: 44px; height: 44px; margin-bottom: 14px; border-radius: 12px; object-fit: cover; box-shadow: 0 6px 18px rgba(51,38,111,.18); }
 .project-top { display: flex; justify-content: space-between; color: var(--purple); }
 .project-top span { font: 700 11px/1 var(--font-display); }
 .project-body { margin-top: auto; }

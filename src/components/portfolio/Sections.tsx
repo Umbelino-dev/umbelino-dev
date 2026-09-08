@@ -142,8 +142,14 @@ export function Projects() {
         <div className="project-grid">
           {projects.map((project) => (
             <a key={project.title} href={project.href} target="_blank" rel="noreferrer" className="project-card">
-              <div className="project-top"><span>{project.number}</span><ArrowUpRight size={20} /></div>
+              <div className="project-top">
+                <span>{project.number}</span>
+                <ArrowUpRight size={20} />
+              </div>
               <div className="project-body">
+                {project.logo && (
+                  <img src={project.logo} alt={`Logo ${project.title}`} className="project-logo" loading="lazy" />
+                )}
                 <p>{project.eyebrow}</p>
                 <h3>{project.title}</h3>
                 <span className="project-url">{project.href.replace("https://", "")}</span>

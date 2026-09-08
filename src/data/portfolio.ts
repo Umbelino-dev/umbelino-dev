@@ -26,6 +26,7 @@ export const projects = [
       "Aplicação criada para auxiliar estudos bíblicos, organizando recursos e conteúdo em uma experiência digital pensada para estudo e consulta.",
     tags: ["Web", "Estudos bíblicos", "Projeto pessoal"],
     href: "https://viahebraica.app/",
+    logo: "/project-via-hebraica-logo.png",
   },
   {
     number: "02",
@@ -35,6 +36,7 @@ export const projects = [
       "Sistema em desenvolvimento para apoiar a gestão de grupos, com acompanhamento de pessoas, radar de participantes e organização das informações do grupo.",
     tags: ["Sistema web", "Gestão", "Projeto pessoal"],
     href: "https://centrododespertar.live/",
+    logo: "/project-despertar-logo.png",
   },
 ];
 
