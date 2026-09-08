@@ -76,7 +76,7 @@ button, input, textarea { font: inherit; }
 .hero-art { position: relative; align-self: stretch; min-height: 670px; overflow: hidden; isolation: isolate; }
 .hero-art::before { content: ""; position: absolute; inset: 28px 0 28px 20px; z-index: -2; border-radius: 24px; background-color: #f4f1ff; background-image: linear-gradient(rgba(85,65,199,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(85,65,199,.08) 1px, transparent 1px); background-size: 42px 42px; }
 .hero-art::after { content: ""; position: absolute; inset: 28px 0 28px 20px; z-index: -1; border: 1px solid rgba(85,65,199,.11); border-radius: 24px; background: radial-gradient(circle at 50% 48%, rgba(255,255,255,.78), transparent 55%); }
-.hero-character { position: absolute; z-index: 2; inset: 28px 0 28px 20px; object-fit: contain; object-position: center bottom; filter: drop-shadow(0 25px 34px rgba(40,26,70,.1)); }
+.hero-character { position: absolute; z-index: 2; inset: 28px 0 28px 20px; object-fit: contain; object-position: center bottom; }
 .art-index, .art-caption { position: absolute; z-index: 5; color: #77718d; font: 700 9px/1.2 var(--font-display); letter-spacing: .13em; }
 .art-index { top: 46px; right: 28px; }
 .art-caption { left: 38px; bottom: 50px; display: grid; gap: 5px; }
@@ -198,7 +198,6 @@ button, input, textarea { font: inherit; }
   .hero-description { font-size: 13px; }
   .hero-facts { gap: 24px; margin-top: 46px; }
   .hero-art { min-height: 510px; }
-  .hero-character { inset: 22px 0 18px 12px; }
   .hero-scroll { position: static; padding: 0 0 22px; }
   .section-block { padding: 96px 20px; }
   .about-layout, .stack-header, .projects-intro, .services-heading, .contact-grid { grid-template-columns: 1fr; gap: 38px; }
@@ -221,7 +220,6 @@ button, input, textarea { font: inherit; }
   .hero-facts strong { font-size: 18px; }
   .hero-facts span { font-size: 9px; line-height: 1.45; }
   .hero-art { min-height: 395px; }
-  .hero-character { inset: 18px 0 14px 0; }
   .art-index { top: 41px; right: 17px; font-size: 8px; }
   .art-caption { left: 22px; bottom: 28px; font-size: 8px; }
   .art-square-a { top: 70px; left: 30px; }
