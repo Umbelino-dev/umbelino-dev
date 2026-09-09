@@ -12,18 +12,38 @@ export function Sidebar() {
       .map((item) => document.getElementById(item.id))
       .filter((el): el is HTMLElement => Boolean(el));
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        if (visible) setActive(visible.target.id);
-      },
-      { rootMargin: "-35% 0px -55% 0px", threshold: [0.08, 0.25, 0.5] },
-    );
+    let ticking = false;
 
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
+    const updateActive = () => {
+      ticking = false;
+      // Linha de referência: um pouco abaixo do topo da tela.
+      const referenceY = window.innerHeight * 0.35;
+
+      let current = sections[0];
+      for (const section of sections) {
+        if (section.getBoundingClientRect().top <= referenceY) {
+          current = section;
+        } else {
+          break;
+        }
+      }
+      if (current) setActive(current.id);
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(updateActive);
+      }
+    };
+
+    updateActive();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, []);
 
   useEffect(() => {
