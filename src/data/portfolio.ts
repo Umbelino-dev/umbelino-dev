@@ -30,13 +30,13 @@ export const projects = [
   },
   {
     number: "02",
-    title: "Centro do Despertar",
-    eyebrow: "Projeto pessoal · Gestão de grupos",
+    title: "Koinonia",
+    eyebrow: "Produto SOU Studio · Igrejas e comunidades",
     description:
-      "Sistema em desenvolvimento para apoiar a gestão de grupos, com acompanhamento de pessoas, radar de participantes e organização das informações do grupo.",
-    tags: ["Sistema web", "Gestão", "Projeto pessoal"],
-    href: "https://centrododespertar.live/",
-    logo: "/project-despertar-logo.png",
+      "Plataforma para igrejas e comunidades acompanharem pessoas, presença, eventos e cuidado em um só lugar, com um radar que mostra quem está se afastando antes que vire distância.",
+    tags: ["Sistema web", "PWA", "Gestão", "Supabase"],
+    href: "https://usekoinonia.com.br/",
+    logo: "/project-koinonia-logo.png",
   },
 ];
 
