@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Github, Instagram, Linkedin, Menu, MessageCircle, X } from "lucide-react";
-import { navItems } from "@/data/portfolio";
+import { navItems, profile, sectionNumber } from "@/data/portfolio";
 import { cn } from "@/lib/utils";
 
 export function Sidebar() {
@@ -69,7 +69,7 @@ export function Sidebar() {
             </div>
             <div>
               <p className="profile-name">Iury Umbelino</p>
-              <p className="profile-role">Desenvolvedor em formação</p>
+              <p className="profile-role">{profile.roleShort}</p>
             </div>
           </div>
 
@@ -80,11 +80,11 @@ export function Sidebar() {
 
           <nav aria-label="Navegação principal" className="sidebar-nav">
             <span className="sidebar-nav-label">Navegação</span>
-            {navItems.map((item, index) => {
+            {navItems.map((item) => {
               const isActive = active === item.id;
               return (
                 <a key={item.id} href={`#${item.id}`} onClick={() => setOpen(false)} aria-current={isActive ? "location" : undefined} className={cn("sidebar-link", isActive && "sidebar-link-active")}>
-                  <span className="nav-number">0{index + 1}</span>
+                  <span className="nav-number">{sectionNumber(item.id)}</span>
                   <span>{item.label}</span>
                 </a>
               );

@@ -1,3 +1,4 @@
+import { sectionNumber } from "@/data/portfolio";
 import { ArrowUpRight, Github, Instagram, Linkedin, Mail, MessageCircle } from "lucide-react";
 
 const whatsappHref = "https://wa.me/5548991000913?text=Ol%C3%A1%20Iury!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar.";
@@ -6,7 +7,7 @@ export function ContactSection() {
   return (
     <section id="contato" className="contact-section" aria-labelledby="contato-title">
       <div className="contact-inner">
-        <div className="section-meta contact-meta"><span>05</span><p>Contato</p><i /></div>
+        <div className="section-meta contact-meta"><span>{sectionNumber("contato")}</span><p>Contato</p><i /></div>
         <div className="contact-grid">
           <div>
             <p className="contact-kicker">Principal canal de contato</p>
@@ -27,7 +28,7 @@ export function ContactSection() {
             </div>
           </div>
         </div>
-        <div className="contact-footer"><span>Iury Umbelino</span><span>Desenvolvedor em formação · 2026</span><a href="#inicio">Voltar ao topo ↑</a></div>
+        <div className="contact-footer"><span>Iury Umbelino</span><span>Suporte de TI e desenvolvimento · 2026</span><a href="#inicio">Voltar ao topo ↑</a></div>
       </div>
     </section>
   );

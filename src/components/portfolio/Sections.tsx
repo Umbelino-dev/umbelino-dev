@@ -1,6 +1,14 @@
 import { useEffect, useRef, type ReactNode } from "react";
-import { ArrowDown, ArrowUpRight, Check, Code2, MessageCircle } from "lucide-react";
-import { practicalAreas, projects, technologies } from "@/data/portfolio";
+import { ArrowDown, ArrowUpRight, Briefcase, Check, Code2, MessageCircle } from "lucide-react";
+import {
+  education,
+  experience,
+  practicalAreas,
+  profile,
+  projects,
+  sectionNumber,
+  technologies,
+} from "@/data/portfolio";
 
 function Reveal({ children, className = "" }: { children: ReactNode; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -40,11 +48,12 @@ export function Hero() {
 
       <div className="hero-grid">
         <Reveal className="hero-copy">
-          <p className="hero-kicker"><span /> Desenvolvedor em formação</p>
+          <p className="hero-kicker"><span /> {profile.kicker}</p>
           <h1 id="hero-title" className="hero-title">Aprendendo tecnologia.<br /><em>Criando coisas reais.</em></h1>
           <p className="hero-description">
-            Sou Iury Umbelino. Estou no primeiro ano da minha jornada como programador, estudando ADS e Ciência da Computação e colocando o que aprendo em projetos próprios.
+            Sou Iury Umbelino, Assistente de TI no Giassi Supermercados. No dia a dia trabalho com SQL, PL/SQL e suporte a sistemas, e estudo Ciência da Computação e ADS construindo projetos próprios.
           </p>
+          <p className="hero-open"><Briefcase size={15} /><span><strong>{profile.openTo}.</strong> {profile.location}.</span></p>
           <div className="hero-actions">
             <a className="button button-primary" href="#projetos">Conhecer projetos <ArrowUpRight size={17} /></a>
             <a className="button button-ghost" href={whatsappHref} target="_blank" rel="noreferrer">
@@ -52,7 +61,7 @@ export function Hero() {
             </a>
           </div>
           <div className="hero-facts">
-            <div><strong>TI</strong><span>Assistente de TI</span></div>
+            <div><strong>TI</strong><span>Assistente no Giassi</span></div>
             <div><strong>SQL</strong><span>e PL/SQL no dia a dia</span></div>
             <div><strong>02</strong><span>projetos no ar</span></div>
           </div>
@@ -84,17 +93,55 @@ export function About() {
   return (
     <section id="sobre" className="section-block" aria-labelledby="sobre-title">
       <Reveal>
-        <div className="section-meta"><span>01</span><p>Sobre mim</p><i /></div>
+        <div className="section-meta"><span>{sectionNumber("sobre")}</span><p>Sobre mim</p><i /></div>
         <div className="about-layout">
           <div>
-            <h2 id="sobre-title">Estou no começo.<br /><em>E estou construindo.</em></h2>
-            <p className="about-statement">Não estou aqui para parecer que sei tudo. Estou aqui para mostrar o que estou aprendendo, o que já construí e para onde quero evoluir.</p>
+            <h2 id="sobre-title">Trabalho com TI.<br /><em>E sigo construindo.</em></h2>
+            <p className="about-statement">Aqui você encontra o que faço no trabalho, o que já construí por conta própria e o que estou estudando para evoluir.</p>
           </div>
           <div className="about-copy">
-            <p className="about-lead">Estou no primeiro ano de programação e estudo ADS na UNOPAR e Ciência da Computação na UNESC.</p>
-            <p>Hoje estou aprendendo Python, JavaScript, Node.js, C++, HTML e CSS. Minha principal forma de aprender é praticando: estudando um conceito, tentando aplicá-lo e transformando ideias em projetos próprios.</p>
-            <p>Além da programação, também faço reparos em celulares e eletrônicos. É outra área em que estou aprendendo na prática, entendendo componentes, manutenção e diagnóstico.</p>
+            <p className="about-lead">Sou Assistente de TI no Giassi Supermercados, onde comecei como Jovem Aprendiz na área administrativa. Em paralelo, estudo Ciência da Computação na UNESC e ADS na UNOPAR.</p>
+            <p>No trabalho, uso SQL e PL/SQL todos os dias. Fora dele, estudo Python, JavaScript, Node.js, C++, HTML e CSS. Aprendo praticando: estudo um conceito, aplico e transformo ideias em projetos próprios, como a Koinonia, que construí sozinho com apoio de IA.</p>
+            <p>Além da programação, faço reparos em celulares e eletrônicos sempre que consigo.</p>
           </div>
+        </div>
+      </Reveal>
+    </section>
+  );
+}
+
+export function Experience() {
+  return (
+    <section id="experiencia" className="section-block experience-section" aria-labelledby="experiencia-title">
+      <Reveal>
+        <div className="section-meta"><span>{sectionNumber("experiencia")}</span><p>Experiência</p><i /></div>
+        <div className="services-heading">
+          <h2 id="experiencia-title">Onde trabalho<br /><em>e onde estudo.</em></h2>
+          <p>Minha experiência profissional é em TI no varejo, com suporte, dados e sistemas.</p>
+        </div>
+        <div className="service-list">
+          {experience.map((job, index) => (
+            <article className="service-row experience-row" key={job.role}>
+              <span>0{index + 1}</span>
+              <div>
+                <h3>{job.role}</h3>
+                <p className="experience-company">{job.company}{job.current && <em>Atual</em>}</p>
+              </div>
+              <ul className="experience-items">
+                {job.items.map((item) => <li key={item}>{item}</li>)}
+              </ul>
+            </article>
+          ))}
+        </div>
+        <h3 className="education-title">Formação</h3>
+        <div className="tech-list">
+          {education.map((item, index) => (
+            <div className="tech-row" key={item.course}>
+              <span className="tech-index">0{index + 1}</span>
+              <div className="tech-name"><strong>{item.course}</strong><span>{item.institution}</span></div>
+              <span className="tech-level"><Check size={14} /> {item.status}</span>
+            </div>
+          ))}
         </div>
       </Reveal>
     </section>
@@ -105,11 +152,11 @@ export function Skills() {
   return (
     <section id="aprendendo" className="section-block stack-section" aria-labelledby="stack-title">
       <Reveal>
-        <div className="section-meta"><span>02</span><p>O que estou aprendendo</p><i /></div>
+        <div className="section-meta"><span>{sectionNumber("aprendendo")}</span><p>Tecnologias</p><i /></div>
         <div className="stack-header">
           <div>
-            <h2 id="stack-title">Minha base<br /><em>está em construção.</em></h2>
-            <p className="stack-note">Estas são as tecnologias que fazem parte do meu estudo atual. Os níveis são honestos e refletem meu momento de aprendizado.</p>
+            <h2 id="stack-title">O que uso<br /><em>e o que estudo.</em></h2>
+            <p className="stack-note">SQL e PL/SQL fazem parte do meu trabalho. As demais tecnologias fazem parte do meu estudo atual, e os níveis refletem onde estou hoje.</p>
           </div>
           <div className="learning-card">
             <Code2 size={20} />
@@ -134,7 +181,7 @@ export function Projects() {
   return (
     <section id="projetos" className="section-block projects-section" aria-labelledby="projetos-title">
       <Reveal>
-        <div className="section-meta"><span>03</span><p>Projetos em destaque</p><i /></div>
+        <div className="section-meta"><span>{sectionNumber("projetos")}</span><p>Projetos em destaque</p><i /></div>
         <div className="projects-intro">
           <h2 id="projetos-title">Duas ideias que<br /><em>já viraram projeto.</em></h2>
           <p>São projetos próprios e representam melhor o meu momento atual: aprender tecnologia criando soluções que têm um propósito real.</p>
@@ -168,10 +215,10 @@ export function Services() {
   return (
     <section id="pratica" className="section-block services-section" aria-labelledby="pratica-title">
       <Reveal>
-        <div className="section-meta"><span>04</span><p>Na prática</p><i /></div>
+        <div className="section-meta"><span>{sectionNumber("pratica")}</span><p>Na prática</p><i /></div>
         <div className="services-heading">
           <h2 id="pratica-title">Tecnologia<br /><em>fora da teoria.</em></h2>
-          <p>Além dos estudos, estas são as áreas em que já coloco a mão na massa — sempre deixando claro quando ainda estou aprendendo.</p>
+          <p>Estas são as áreas em que já coloco a mão na massa, no trabalho e fora dele.</p>
         </div>
         <div className="service-list">
           {practicalAreas.map((area) => (

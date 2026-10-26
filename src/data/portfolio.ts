@@ -3,18 +3,64 @@ export type NavItem = { id: string; label: string };
 export const navItems: NavItem[] = [
   { id: "inicio", label: "Início" },
   { id: "sobre", label: "Sobre mim" },
-  { id: "aprendendo", label: "Aprendendo" },
+  { id: "experiencia", label: "Experiência" },
+  { id: "aprendendo", label: "Tecnologias" },
   { id: "projetos", label: "Projetos" },
+  { id: "pratica", label: "Na prática" },
   { id: "contato", label: "Contato" },
 ];
 
+/** Número editorial da seção, igual ao mostrado na sidebar (Início = 00). */
+export function sectionNumber(id: string): string {
+  const index = navItems.findIndex((item) => item.id === id);
+  return String(Math.max(index, 0)).padStart(2, "0");
+}
+
+export const profile = {
+  name: "Iury Umbelino",
+  role: "Assistente de TI no Giassi",
+  roleShort: "Assistente de TI · Giassi",
+  kicker: "Suporte de TI · SQL · Desenvolvimento web",
+  openTo: "Aberto a vagas de Suporte de TI, Desenvolvedor Júnior e Estágio em TI",
+  location: "Remoto ou presencial em Içara, Criciúma e região",
+};
+
+export const experience = [
+  {
+    role: "Assistente de TI",
+    company: "Giassi Supermercados",
+    current: true,
+    items: [
+      "Suporte a usuários",
+      "Consultas e manipulação de dados em SQL e PL/SQL (Oracle)",
+      "Configuração e manutenção da plataforma DOX (EMA Sistemas)",
+      "Padronização de templates de e-mail com HTML e construtor em SQL",
+    ],
+  },
+  {
+    role: "Jovem Aprendiz",
+    company: "Giassi Supermercados · Administrativo",
+    current: false,
+    items: ["Primeira experiência na empresa, na área administrativa"],
+  },
+];
+
+export const education = [
+  { course: "Ciência da Computação", institution: "UNESC", status: "Em andamento" },
+  { course: "Análise e Desenvolvimento de Sistemas", institution: "UNOPAR", status: "Em andamento" },
+  { course: "Administração", institution: "Senac", status: "Formação" },
+  { course: "Introdução a HTML", institution: "Fundação Bradesco", status: "Certificação" },
+];
+
 export const technologies = [
+  { name: "SQL", level: "Uso no trabalho", group: "Banco de dados" },
+  { name: "PL/SQL · Oracle", level: "Uso no trabalho", group: "Banco de dados" },
+  { name: "HTML", level: "Em prática", group: "Web" },
+  { name: "CSS", level: "Em prática", group: "Web" },
   { name: "JavaScript", level: "Aprendendo", group: "Linguagem" },
   { name: "Python", level: "Aprendendo", group: "Linguagem" },
   { name: "Node.js", level: "Aprendendo", group: "Runtime / backend" },
   { name: "C++", level: "Aprendendo", group: "Linguagem" },
-  { name: "HTML", level: "Em prática", group: "Web" },
-  { name: "CSS", level: "Em prática", group: "Web" },
 ];
 
 export const projects = [
@@ -43,20 +89,20 @@ export const projects = [
 export const practicalAreas = [
   {
     number: "01",
-    title: "Projetos web",
+    title: "Suporte e dados",
     description:
-      "Construo projetos próprios enquanto estudo desenvolvimento web e procuro transformar ideias em experiências que possam ser realmente utilizadas.",
+      "No Giassi, atendo usuários, consulto e ajusto dados com SQL e PL/SQL e mantenho a plataforma DOX funcionando no dia a dia.",
   },
   {
     number: "02",
-    title: "Programação em aprendizado",
+    title: "Projetos web",
     description:
-      "Meu momento atual é de formação: estudo Python, JavaScript, Node.js, C++, HTML e CSS, sempre tentando colocar o conteúdo em prática.",
+      "Construo projetos próprios, como a Koinonia, e coloco em prática o que estudo de Python, JavaScript, Node.js, C++, HTML e CSS.",
   },
   {
     number: "03",
     title: "Celulares e eletrônicos",
     description:
-      "Também faço reparos e manutenção de celulares e eletrônicos, ainda em processo de aprendizado e aprimoramento técnico.",
+      "Sempre que consigo, faço reparos e manutenção de celulares e eletrônicos, um trabalho que faço fora do horário da TI.",
   },
 ];
