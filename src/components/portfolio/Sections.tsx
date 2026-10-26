@@ -1,5 +1,5 @@
 import { useEffect, useRef, type ReactNode } from "react";
-import { ArrowDown, ArrowUpRight, Check, Code2, Cpu, MessageCircle, Wrench } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Check, Code2, MessageCircle } from "lucide-react";
 import { practicalAreas, projects, technologies } from "@/data/portfolio";
 
 function Reveal({ children, className = "" }: { children: ReactNode; className?: string }) {
@@ -41,7 +41,7 @@ export function Hero() {
       <div className="hero-grid">
         <Reveal className="hero-copy">
           <p className="hero-kicker"><span /> Desenvolvedor em formação</p>
-          <h1 id="hero-title">Aprendendo tecnologia.<br /><em>Criando coisas reais.</em></h1>
+          <h1 id="hero-title" className="hero-title">Aprendendo tecnologia.<br /><em>Criando coisas reais.</em></h1>
           <p className="hero-description">
             Sou Iury Umbelino. Estou no primeiro ano da minha jornada como programador, estudando ADS e Ciência da Computação e colocando o que aprendo em projetos próprios.
           </p>
@@ -52,9 +52,9 @@ export function Hero() {
             </a>
           </div>
           <div className="hero-facts">
-            <div><strong>01</strong><span>ano programando</span></div>
-            <div><strong>02</strong><span>graduações em andamento</span></div>
-            <div><strong>02</strong><span>projetos em destaque</span></div>
+            <div><strong>TI</strong><span>Assistente de TI</span></div>
+            <div><strong>SQL</strong><span>e PL/SQL no dia a dia</span></div>
+            <div><strong>02</strong><span>projetos no ar</span></div>
           </div>
         </Reveal>
 
@@ -182,7 +182,6 @@ export function Services() {
             </article>
           ))}
         </div>
-        <div className="learning-note"><Cpu size={19} /><span>Automação com n8n e Inteligência Artificial ainda não fazem parte do meu conhecimento atual. Não apresento essas áreas como experiência profissional.</span></div>
       </Reveal>
     </section>
   );
