@@ -77,20 +77,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Iury Umbelino | Desenvolvedor em formação" },
-      {
-        name: "description",
-        content: "Portfólio de Iury Umbelino — desenvolvedor em formação, projetos web e tecnologia na prática.",
-      },
+      { title: "Iury Umbelino" },
       { name: "author", content: "Iury Umbelino" },
-      { property: "og:title", content: "Iury Umbelino | Desenvolvedor em formação" },
-      {
-        property: "og:description",
-        content: "Portfólio de Iury Umbelino — desenvolvedor em formação, projetos web e tecnologia na prática.",
-      },
-      { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Iury Umbelino" },
+      { property: "og:locale", content: "pt_BR" },
       { name: "twitter:card", content: "summary_large_image" },
-          ],
+    ],
     links: [
       {
         rel: "stylesheet",

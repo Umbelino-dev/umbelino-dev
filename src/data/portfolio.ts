@@ -1,3 +1,5 @@
+export const SITE_URL = "https://umbelino.vercel.app";
+
 export type NavItem = { id: string; label: string };
 
 export const navItems: NavItem[] = [
@@ -72,7 +74,7 @@ export const projects = [
       "Aplicação criada para auxiliar estudos bíblicos, organizando recursos e conteúdo em uma experiência digital pensada para estudo e consulta.",
     tags: ["Web", "Estudos bíblicos", "Projeto pessoal"],
     href: "https://viahebraica.app/",
-    logo: "/project-via-hebraica-logo.png",
+    logo: "/project-via-hebraica-logo.webp",
   },
   {
     number: "02",
@@ -82,7 +84,7 @@ export const projects = [
       "Plataforma para igrejas e comunidades acompanharem pessoas, presença, eventos e cuidado em um só lugar, com um radar que mostra quem está se afastando antes que vire distância.",
     tags: ["Sistema web", "PWA", "Gestão", "Supabase"],
     href: "https://usekoinonia.com.br/",
-    logo: "/project-koinonia-logo.png",
+    logo: "/project-koinonia-logo.webp",
   },
 ];
 

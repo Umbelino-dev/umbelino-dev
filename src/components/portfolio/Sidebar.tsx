@@ -64,7 +64,7 @@ export function Sidebar() {
         <div>
           <div className="profile-block">
             <div className="profile-photo-wrap">
-              <img src="/iury-profile.jpg" alt="Iury Umbelino" className="profile-photo" />
+              <img src="/iury-profile.webp" alt="Iury Umbelino" className="profile-photo" width={160} height={160} />
               <span className="profile-live" aria-hidden="true" />
             </div>
             <div>

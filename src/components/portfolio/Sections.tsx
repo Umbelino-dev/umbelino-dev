@@ -74,7 +74,7 @@ export function Hero() {
           <div className="art-index">IU / 01 — IDENTIDADE</div>
           <div className="art-caption"><span>TECNOLOGIA</span><span>EM CONSTRUÇÃO</span></div>
           <img
-            src="/iury-hero-v2.png"
+            src="/iury-hero-v2.webp"
             alt="Iury Umbelino ao lado de uma versão ilustrada em estilo anime"
             className="hero-character"
             width={742}
@@ -195,7 +195,7 @@ export function Projects() {
               </div>
               <div className="project-body">
                 {project.logo && (
-                  <img src={project.logo} alt={`Logo ${project.title}`} className="project-logo" loading="lazy" />
+                  <img src={project.logo} alt={`Logo ${project.title}`} className="project-logo" width={44} height={44} loading="lazy" />
                 )}
                 <p>{project.eyebrow}</p>
                 <h3>{project.title}</h3>
