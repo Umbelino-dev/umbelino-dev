@@ -183,27 +183,47 @@ export function Projects() {
       <Reveal>
         <div className="section-meta"><span>{sectionNumber("projetos")}</span><p>Projetos em destaque</p><i /></div>
         <div className="projects-intro">
-          <h2 id="projetos-title">Duas ideias que<br /><em>já viraram projeto.</em></h2>
-          <p>São projetos próprios e representam melhor o meu momento atual: aprender tecnologia criando soluções que têm um propósito real.</p>
+          <h2 id="projetos-title">Ideias que<br /><em>já estão no ar.</em></h2>
+          <p>Projetos próprios, construídos do zero. Em cada um, o problema, o meu papel, a stack real e um desafio técnico.</p>
         </div>
         <div className="project-grid">
-          {projects.map((project) => (
-            <a key={project.title} href={project.href} target="_blank" rel="noreferrer" className="project-card">
+          {projects.map((project, index) => (
+            <article key={project.title} className={`project-card${project.featured ? " project-card-featured" : ""}`}>
               <div className="project-top">
-                <span>{project.number}</span>
-                <ArrowUpRight size={20} />
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <span className="project-status">{project.status}</span>
               </div>
+              {project.screenshot && (
+                <a href={project.href} target="_blank" rel="noreferrer" className="project-shot" tabIndex={-1} aria-hidden="true">
+                  <img src={project.screenshot} alt="" width={960} height={600} loading="lazy" />
+                </a>
+              )}
               <div className="project-body">
-                {project.logo && (
-                  <img src={project.logo} alt={`Logo ${project.title}`} className="project-logo" width={44} height={44} loading="lazy" />
-                )}
-                <p>{project.eyebrow}</p>
-                <h3>{project.title}</h3>
-                <span className="project-url">{project.href.replace("https://", "")}</span>
-                <div className="project-tags">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
-                <div className="project-description">{project.description}</div>
+                <div className="project-heading">
+                  {project.logo && (
+                    <img src={project.logo} alt="" className="project-logo" width={44} height={44} loading="lazy" />
+                  )}
+                  <div>
+                    <p>{project.eyebrow}</p>
+                    <h3>{project.title}</h3>
+                  </div>
+                </div>
+                <p className="project-description">{project.problem}</p>
+                <dl className="project-facts">
+                  <div><dt>Meu papel</dt><dd>{project.role}</dd></div>
+                  <div><dt>Desafio</dt><dd>{project.challenge}</dd></div>
+                </dl>
+                <ul className="project-tags" aria-label="Stack">
+                  {project.stack.map((tag) => <li key={tag}>{tag}</li>)}
+                </ul>
+                <div className="project-links">
+                  <a href={project.href} target="_blank" rel="noreferrer">Ver site <ArrowUpRight size={15} /><span className="sr-only"> de {project.title}</span></a>
+                  {project.repo && (
+                    <a href={project.repo} target="_blank" rel="noreferrer">Ver código <ArrowUpRight size={15} /><span className="sr-only"> de {project.title}</span></a>
+                  )}
+                </div>
               </div>
-            </a>
+            </article>
           ))}
         </div>
       </Reveal>

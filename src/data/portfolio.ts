@@ -65,26 +65,48 @@ export const technologies = [
   { name: "C++", level: "Aprendendo", group: "Linguagem" },
 ];
 
-export const projects = [
+export type Project = {
+  title: string;
+  eyebrow: string;
+  status: string;
+  problem: string;
+  role: string;
+  stack: string[];
+  challenge: string;
+  href: string;
+  repo?: string;
+  logo?: string;
+  screenshot?: string;
+  featured?: boolean;
+};
+
+export const projects: Project[] = [
   {
-    number: "01",
-    title: "Via Hebraica",
-    eyebrow: "Projeto pessoal · Estudos bíblicos",
-    description:
-      "Aplicação criada para auxiliar estudos bíblicos, organizando recursos e conteúdo em uma experiência digital pensada para estudo e consulta.",
-    tags: ["Web", "Estudos bíblicos", "Projeto pessoal"],
-    href: "https://viahebraica.app/",
-    logo: "/project-via-hebraica-logo.webp",
-  },
-  {
-    number: "02",
     title: "Koinonia",
     eyebrow: "Produto SOU Studio · Igrejas e comunidades",
-    description:
-      "Plataforma para igrejas e comunidades acompanharem pessoas, presença, eventos e cuidado em um só lugar, com um radar que mostra quem está se afastando antes que vire distância.",
-    tags: ["Sistema web", "PWA", "Gestão", "Supabase"],
+    status: "No ar",
+    problem:
+      "A liderança de igrejas e comunidades precisa saber quem está se afastando, mas presença, eventos e cuidado ficam espalhados.",
+    role: "Construí o produto inteiro sozinho, com apoio de IA: interface, banco de dados e autenticação.",
+    stack: ["TanStack Start", "React 19", "TypeScript", "Supabase", "PostgreSQL + RLS", "PWA"],
+    challenge:
+      "Isolar os dados de cada organização e controlar o acesso por módulo. Resolvi no próprio banco: regras de RLS no Supabase e permissões de ver/editar por módulo para cada gestor. O Radar de Cuidado transforma a chamada dos encontros em uma lista de quem precisa de atenção.",
     href: "https://usekoinonia.com.br/",
     logo: "/project-koinonia-logo.webp",
+    featured: true,
+  },
+  {
+    title: "Este portfólio",
+    eyebrow: "Projeto pessoal · Site",
+    status: "No ar",
+    problem: "Mostrar com clareza minha experiência em TI e os projetos que já construí.",
+    role: "Desenvolvimento, conteúdo e design.",
+    stack: ["React 19", "TypeScript", "TanStack Start (SSR)", "Tailwind CSS"],
+    challenge:
+      "Deixar o site leve sem perder a identidade visual. As imagens da página inicial caíram de cerca de 900 KB para menos de 100 KB com WebP no tamanho certo, e a página é renderizada no servidor para carregar rápido e ser indexada.",
+    href: "https://umbelino.vercel.app/",
+    repo: "https://github.com/Umbelino-dev/umbelino-dev",
+    screenshot: "/project-portfolio.webp",
   },
 ];
 
