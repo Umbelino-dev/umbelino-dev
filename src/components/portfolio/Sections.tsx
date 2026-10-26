@@ -150,8 +150,9 @@ export function About() {
           </div>
           <div className="about-copy">
             <p className="about-lead">
-              Sou Assistente de TI no Giassi Supermercados, onde comecei como Jovem Aprendiz na área
-              administrativa. Em paralelo, estudo Ciência da Computação na UNESC e ADS na UNOPAR.
+              Sou Assistente de TI no Giassi Supermercados, onde comecei como Jovem Aprendiz em 2024
+              e cheguei à equipe de TI em 2026. Em paralelo, estudo Ciência da Computação na UNESC e
+              ADS na UNOPAR.
             </p>
             <p>
               No trabalho, uso SQL e PL/SQL todos os dias. Fora dele, estudo Python, JavaScript,
@@ -185,7 +186,10 @@ export function Experience() {
             <br />
             <em>e onde estudo.</em>
           </h2>
-          <p>Minha experiência profissional é em TI no varejo, com suporte, dados e sistemas.</p>
+          <p>
+            Toda a minha trajetória é no Giassi: comecei no Centro de Distribuição e hoje estou na
+            equipe de TI.
+          </p>
         </div>
         <div className="service-list">
           {experience.map((job, index) => (
@@ -197,6 +201,7 @@ export function Experience() {
                   {job.company}
                   {job.current && <em>Atual</em>}
                 </p>
+                <p className="experience-period">{job.period}</p>
               </div>
               <ul className="experience-items">
                 {job.items.map((item) => (

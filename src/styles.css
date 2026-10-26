@@ -166,6 +166,7 @@ button, input, textarea { font: inherit; }
 .experience-row > span { padding-top: 7px; }
 .experience-company { display: flex; align-items: center; gap: 10px; margin: 8px 0 0 !important; color: var(--muted); font-size: 13px; }
 .experience-company em { padding: 3px 8px; border-radius: 100px; color: var(--purple); background: var(--purple-soft); font-size: 12px; font-style: normal; font-weight: 700; }
+.experience-period { margin: 6px 0 0 !important; color: #6b6873; font-size: 12px; letter-spacing: .02em; }
 .experience-items { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
 .experience-items li { position: relative; padding-left: 16px; color: var(--muted); font-size: 13px; line-height: 1.6; }
 .experience-items li::before { content: ""; position: absolute; top: .62em; left: 0; width: 6px; height: 6px; border-radius: 50%; background: var(--purple); }

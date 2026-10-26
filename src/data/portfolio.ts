@@ -42,31 +42,48 @@ export const experience = [
   {
     role: "Assistente de TI",
     company: "Giassi Supermercados",
+    period: "abr/2026 – atual",
     current: true,
     items: [
-      "Suporte a usuários",
+      "Suporte a usuários por chamados e e-mail",
       "Consultas e manipulação de dados em SQL e PL/SQL (Oracle)",
       "Configuração e manutenção da plataforma DOX (EMA Sistemas)",
       "Padronização de templates de e-mail com HTML e construtor em SQL",
+      "Criação e ajuste de relatórios",
     ],
   },
   {
-    role: "Jovem Aprendiz",
-    company: "Giassi Supermercados · Administrativo",
+    role: "Auxiliar Administrativo de TI",
+    company: "Giassi Supermercados",
+    period: "jan/2026 – mar/2026",
     current: false,
-    items: ["Primeira experiência na empresa, na área administrativa"],
+    items: ["Primeira função na equipe de TI"],
+  },
+  {
+    role: "Jovem Aprendiz e Operador de Caixas",
+    company: "Giassi Supermercados · Centro de Distribuição",
+    period: "abr/2024 – dez/2025",
+    current: false,
+    items: [
+      "Jovem Aprendiz no Centro de Distribuição (abr/2024 – jul/2025)",
+      "Operador de Caixas na logística do CD (nov/2025 – dez/2025)",
+    ],
   },
 ];
 
 export const education = [
-  { course: "Ciência da Computação", institution: "UNESC", status: "Em andamento" },
+  {
+    course: "Ciência da Computação",
+    institution: "UNESC",
+    status: "2º semestre · previsão 2030",
+  },
   {
     course: "Análise e Desenvolvimento de Sistemas",
-    institution: "UNOPAR",
-    status: "Em andamento",
+    institution: "UNOPAR · EAD",
+    status: "2º semestre · previsão 2028",
   },
-  { course: "Administração", institution: "Senac", status: "Formação" },
-  { course: "Introdução a HTML", institution: "Fundação Bradesco", status: "Certificação" },
+  { course: "Técnico em Administração", institution: "Senac", status: "2025" },
+  { course: "Introdução a HTML", institution: "Fundação Bradesco", status: "2024" },
 ];
 
 export const technologies = [
@@ -108,7 +125,21 @@ export const projects: Project[] = [
       "Isolar os dados de cada organização e controlar o acesso por módulo. Resolvi no próprio banco: regras de RLS no Supabase e permissões de ver/editar por módulo para cada gestor. O Radar de Cuidado transforma a chamada dos encontros em uma lista de quem precisa de atenção.",
     href: "https://usekoinonia.com.br/",
     logo: "/project-koinonia-logo.webp",
+    screenshot: "/project-koinonia.webp",
     featured: true,
+  },
+  {
+    title: "Site da SOU Studio",
+    eyebrow: "Minha empresa · Site institucional",
+    status: "No ar",
+    problem:
+      "Apresentar a SOU Studio com clareza e levar o visitante a pedir um orçamento em poucos cliques.",
+    role: "Design e desenvolvimento do site.",
+    stack: ["Next.js 16", "React 19", "TypeScript", "CSS Modules"],
+    challenge:
+      "Ter tema claro e escuro, animações e um formulário de orçamento sem biblioteca de animação nem kit de componentes. Tudo é CSS Modules com tokens próprios, as páginas são geradas estaticamente no build e o movimento pode ser reduzido.",
+    href: "https://soustudio.com.br/",
+    screenshot: "/project-sou-studio.webp",
   },
   {
     title: "Este portfólio",
@@ -118,7 +149,7 @@ export const projects: Project[] = [
     role: "Desenvolvimento, conteúdo e design.",
     stack: ["React 19", "TypeScript", "TanStack Start (SSR)", "Tailwind CSS"],
     challenge:
-      "Deixar o site leve sem perder a identidade visual. As imagens da página inicial caíram de cerca de 900 KB para menos de 100 KB com WebP no tamanho certo, e a página é renderizada no servidor para carregar rápido e ser indexada.",
+      "Deixar o site leve sem perder a identidade visual. As imagens da página inicial caíram de cerca de 900 KB para menos de 150 KB, já com as capturas dos projetos, usando WebP no tamanho certo, e a página é renderizada no servidor para carregar rápido e ser indexada.",
     href: "https://umbelino.vercel.app/",
     repo: "https://github.com/Umbelino-dev/umbelino-dev",
     screenshot: "/project-portfolio.webp",

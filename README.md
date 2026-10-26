@@ -30,7 +30,7 @@ Portfólio pessoal de Iury Umbelino, Assistente de TI no Giassi Supermercados e 
 
 - **Conteúdo em um só arquivo.** Textos, links e contatos ficam em `src/data/portfolio.ts`; os componentes só renderizam. Trocar um texto ou o WhatsApp é uma edição em um lugar.
 - **Numeração derivada da navegação.** O número de cada seção vem da posição em `navItems`, então a sidebar e os títulos das seções nunca ficam diferentes.
-- **Imagens leves.** Fotos em WebP no tamanho em que aparecem, com `width` e `height` para evitar saltos de layout. As imagens da home somam menos de 100 KB.
+- **Imagens leves.** Fotos em WebP no tamanho em que aparecem, com `width` e `height` para evitar saltos de layout. As imagens da home, incluindo as capturas dos projetos, somam menos de 150 KB.
 - **Acessibilidade.** Texto com contraste mínimo de 4,5:1, tamanho mínimo de 12 px para texto informativo, alvos de toque com 40 px e animação de entrada desligada com `prefers-reduced-motion`.
 - **Sem dependências sobrando.** O kit de componentes que veio com o template foi removido; o site usa apenas React, TanStack, Tailwind e `lucide-react`.
 
