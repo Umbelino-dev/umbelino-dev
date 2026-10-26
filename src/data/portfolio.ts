@@ -1,5 +1,16 @@
 export const SITE_URL = "https://umbelino.vercel.app";
 
+export const contact = {
+  whatsappHref:
+    "https://wa.me/5548991000913?text=Ol%C3%A1%20Iury!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar.",
+  whatsappLabel: "+55 (48) 99100-0913",
+  email: "iuryumbelino1@gmail.com",
+  github: "https://github.com/Umbelino-dev/",
+  linkedin: "https://www.linkedin.com/in/iuryumbelino/",
+  instagram: "https://www.instagram.com/umbelino.zs/",
+  souStudio: "https://soustudio.com.br",
+};
+
 export type NavItem = { id: string; label: string };
 
 export const navItems: NavItem[] = [
@@ -49,7 +60,11 @@ export const experience = [
 
 export const education = [
   { course: "Ciência da Computação", institution: "UNESC", status: "Em andamento" },
-  { course: "Análise e Desenvolvimento de Sistemas", institution: "UNOPAR", status: "Em andamento" },
+  {
+    course: "Análise e Desenvolvimento de Sistemas",
+    institution: "UNOPAR",
+    status: "Em andamento",
+  },
   { course: "Administração", institution: "Senac", status: "Formação" },
   { course: "Introdução a HTML", institution: "Fundação Bradesco", status: "Certificação" },
 ];

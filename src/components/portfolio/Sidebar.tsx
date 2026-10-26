@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Github, Instagram, Linkedin, Menu, MessageCircle, X } from "lucide-react";
-import { navItems, profile, sectionNumber } from "@/data/portfolio";
+import { contact, navItems, profile, sectionNumber } from "@/data/portfolio";
 import { cn } from "@/lib/utils";
 
 export function Sidebar() {
@@ -48,23 +48,41 @@ export function Sidebar() {
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [open]);
-
-  const whatsappHref = "https://wa.me/5548991000913?text=Ol%C3%A1%20Iury!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar.";
 
   return (
     <>
-      <button type="button" aria-label={open ? "Fechar menu" : "Abrir menu"} aria-expanded={open} onClick={() => setOpen((value) => !value)} className="mobile-menu">
+      <button
+        type="button"
+        aria-label={open ? "Fechar menu" : "Abrir menu"}
+        aria-expanded={open}
+        onClick={() => setOpen((value) => !value)}
+        className="mobile-menu"
+      >
         {open ? <X size={20} /> : <Menu size={20} />}
       </button>
-      {open && <button className="mobile-overlay" aria-label="Fechar menu" onClick={() => setOpen(false)} />}
+      {open && (
+        <button
+          className="mobile-overlay"
+          aria-label="Fechar menu"
+          onClick={() => setOpen(false)}
+        />
+      )}
 
       <aside className={cn("sidebar", open && "sidebar-open")}>
         <div>
           <div className="profile-block">
             <div className="profile-photo-wrap">
-              <img src="/iury-profile.webp" alt="Iury Umbelino" className="profile-photo" width={160} height={160} />
+              <img
+                src="/iury-profile.webp"
+                alt="Iury Umbelino"
+                className="profile-photo"
+                width={160}
+                height={160}
+              />
               <span className="profile-live" aria-hidden="true" />
             </div>
             <div>
@@ -83,7 +101,13 @@ export function Sidebar() {
             {navItems.map((item) => {
               const isActive = active === item.id;
               return (
-                <a key={item.id} href={`#${item.id}`} onClick={() => setOpen(false)} aria-current={isActive ? "location" : undefined} className={cn("sidebar-link", isActive && "sidebar-link-active")}>
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  onClick={() => setOpen(false)}
+                  aria-current={isActive ? "location" : undefined}
+                  className={cn("sidebar-link", isActive && "sidebar-link-active")}
+                >
                   <span className="nav-number">{sectionNumber(item.id)}</span>
                   <span>{item.label}</span>
                 </a>
@@ -93,14 +117,27 @@ export function Sidebar() {
         </div>
 
         <div className="sidebar-bottom">
-          <a className="sidebar-whatsapp" href={whatsappHref} target="_blank" rel="noreferrer">
-            <span><MessageCircle size={15} /> Principal contato</span>
+          <a
+            className="sidebar-whatsapp"
+            href={contact.whatsappHref}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span>
+              <MessageCircle size={15} /> Principal contato
+            </span>
             <strong>Falar no WhatsApp ↗</strong>
           </a>
           <div className="sidebar-socials">
-            <a href="https://github.com/Umbelino-dev/" target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={16} /></a>
-            <a href="https://www.linkedin.com/in/iuryumbelino/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={16} /></a>
-            <a href="https://www.instagram.com/umbelino.zs/" target="_blank" rel="noreferrer" aria-label="Instagram"><Instagram size={16} /></a>
+            <a href={contact.github} target="_blank" rel="noreferrer" aria-label="GitHub">
+              <Github size={16} />
+            </a>
+            <a href={contact.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn">
+              <Linkedin size={16} />
+            </a>
+            <a href={contact.instagram} target="_blank" rel="noreferrer" aria-label="Instagram">
+              <Instagram size={16} />
+            </a>
           </div>
           <p className="sidebar-copyright">© {new Date().getFullYear()} Iury Umbelino</p>
         </div>

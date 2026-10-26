@@ -34,7 +34,7 @@ export default defineConfig(async ({ command, mode }) => {
         // is detected (e.g. a local build). Force the Vercel preset when
         // building on Vercel (VERCEL is set automatically by their build env).
         defaultPreset: "cloudflare-module",
-        ...(process.env.VERCEL ? { preset: "vercel" } : {}),
+        ...(process.env["VERCEL"] ? { preset: "vercel" } : {}),
       }),
     );
   }
@@ -54,7 +54,13 @@ export default defineConfig(async ({ command, mode }) => {
       ],
     },
     optimizeDeps: {
-      include: ["react", "react-dom", "react-dom/client", "react/jsx-runtime", "react/jsx-dev-runtime"],
+      include: [
+        "react",
+        "react-dom",
+        "react-dom/client",
+        "react/jsx-runtime",
+        "react/jsx-dev-runtime",
+      ],
       ignoreOutdatedRequests: true,
     },
     server: { host: "::" as const, port: 8080 },

@@ -1,6 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Sidebar } from "@/components/portfolio/Sidebar";
-import { About, Experience, Hero, Projects, Services, Skills, SouStudioStrip } from "@/components/portfolio/Sections";
+import {
+  About,
+  Experience,
+  Hero,
+  Projects,
+  Services,
+  Skills,
+  SouStudioStrip,
+} from "@/components/portfolio/Sections";
 import { ContactSection } from "@/components/portfolio/ContactSection";
 import { SITE_URL } from "@/data/portfolio";
 
