@@ -253,3 +253,14 @@ export function Services() {
     </section>
   );
 }
+
+export function SouStudioStrip() {
+  return (
+    <aside className="sou-strip" aria-label="SOU Studio">
+      <a href="https://soustudio.com.br" target="_blank" rel="noreferrer">
+        <span>Também crio sites e identidades visuais pela <strong>SOU Studio</strong></span>
+        <ArrowUpRight size={18} />
+      </a>
+    </aside>
+  );
+}

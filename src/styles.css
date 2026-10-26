@@ -170,6 +170,12 @@ button, input, textarea { font: inherit; }
 .experience-items li { position: relative; padding-left: 16px; color: var(--muted); font-size: 13px; line-height: 1.6; }
 .experience-items li::before { content: ""; position: absolute; top: .62em; left: 0; width: 6px; height: 6px; border-radius: 50%; background: var(--purple); }
 .education-title { margin: 72px 0 22px; font: 600 22px/1.2 var(--font-display); letter-spacing: -.04em; }
+.sou-strip { max-width: 1440px; margin: 0 auto 40px; padding: 0 52px; }
+.sou-strip a { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 64px; padding: 16px 22px; border: 1px solid var(--line); border-radius: 14px; color: var(--muted); background: #fff; font-size: 14px; transition: border-color .25s ease, color .25s ease; }
+.sou-strip strong { color: var(--ink); font-weight: 700; }
+.sou-strip svg { flex: 0 0 auto; color: var(--purple); transition: transform .25s ease; }
+.sou-strip a:hover { border-color: rgba(85,65,199,.3); color: var(--ink); }
+.sou-strip a:hover svg { transform: translate(2px,-2px); }
 .learning-note { display: flex; gap: 12px; align-items: flex-start; max-width: 760px; margin-top: 28px; padding: 15px 16px; color: #68656e; background: #fff; border: 1px solid var(--line); border-radius: 11px; font-size: 11px; line-height: 1.7; }
 .learning-note svg { flex: 0 0 auto; color: var(--purple); }
 
@@ -209,6 +215,7 @@ button, input, textarea { font: inherit; }
   .hero-title { font-size: clamp(45px, 5.4vw, 62px); }
   .hero-art { min-height: 610px; }
   .section-block { padding: 112px 34px; }
+  .sou-strip { padding: 0 34px; }
 }
 
 @media (max-width: 820px) {
@@ -227,6 +234,7 @@ button, input, textarea { font: inherit; }
   .hero-art { min-height: 510px; }
   .hero-scroll { position: static; padding: 0 0 22px; }
   .section-block { padding: 96px 20px; }
+  .sou-strip { padding: 0 20px; }
   .about-layout, .stack-header, .projects-intro, .services-heading, .contact-grid { grid-template-columns: 1fr; gap: 38px; }
   .project-grid { grid-template-columns: 1fr; }
   .project-card-featured:has(.project-shot) { display: flex; }
@@ -253,6 +261,7 @@ button, input, textarea { font: inherit; }
   .art-square-b { right: 28px; }
   .art-square-c { bottom: 55px; }
   .section-block { padding: 82px 14px; }
+  .sou-strip { padding: 0 14px; }
   .section-meta { margin-bottom: 38px; }
   .about-layout h2, .stack-header h2, .projects-intro h2, .services-heading h2 { font-size: 42px; }
   .about-copy .about-lead { font-size: 16px; }
